@@ -168,7 +168,7 @@ class GameController extends GetxController {
         _showGameCompleteDialog();
       }
     } else if (game.value.isGameOver && !game.value.isWinner) {
-      _showRetryDialog();
+      // _showRetryDialog();
     }
   }
 
@@ -211,30 +211,30 @@ class GameController extends GetxController {
     );
   }
 
-  void _showRetryDialog() {
-    Get.dialog(
-      AlertDialog(
-        title: Text('Level Failed'),
-        content: Text('Try again?'),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Get.back();
-              retryLevel();
-            },
-            child: Text('Retry'),
-          ),
-          TextButton(
-            onPressed: () {
-              Get.back();
-              resetToFirstLevel();
-            },
-            child: Text('Main Menu'),
-          ),
-        ],
-      ),
-    );
-  }
+  // void _showRetryDialog() {
+  //   Get.dialog(
+  //     AlertDialog(
+  //       title: Text('Level Failed'),
+  //       content: Text('Try again?'),
+  //       actions: [
+  //         TextButton(
+  //           onPressed: () {
+  //             Get.back();
+  //             retryLevel();
+  //           },
+  //           child: Text('Retry'),
+  //         ),
+  //         TextButton(
+  //           onPressed: () {
+  //             Get.back();
+  //             resetToFirstLevel();
+  //           },
+  //           child: Text('Main Menu'),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 
   void startNextLevel() {
     String newDifficulty = game.value.difficulty;

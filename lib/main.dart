@@ -15,6 +15,8 @@ class MyApp extends StatelessWidget {
   final GameController gameController = Get.put(GameController());
   final SettingsController settingsController = Get.put(SettingsController());
 
+   MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(

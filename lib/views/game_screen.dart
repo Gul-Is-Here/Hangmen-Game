@@ -194,8 +194,21 @@ class GameScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       SizedBox(height: 20),
-
+                      Container(
+                        height: 250,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[100],
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: CustomPaint(
+                          painter: HangmanPainter(
+                            mistakes: 6 - game.attemptsLeft,
+                          ),
+                        ),
+                      ),
                       // Level and Progress
+                      SizedBox(height: 20),
                       Container(
                         padding: EdgeInsets.symmetric(
                           horizontal: 16,

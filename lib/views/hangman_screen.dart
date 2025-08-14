@@ -35,13 +35,15 @@ class HangmanScreen extends StatelessWidget {
                     painter: HangmanPainter(mistakes: 6 - hangman.attemptsLeft),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
+
                 // Hidden Word
                 Text(
                   hangman.hiddenWord,
                   style: GoogleFonts.poppins(fontSize: 32, letterSpacing: 5),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
+
                 // Keyboard (A-Z)
                 Wrap(
                   alignment: WrapAlignment.center,
@@ -56,8 +58,8 @@ class HangmanScreen extends StatelessWidget {
                           ? null
                           : () => _controller.guessLetter(letter),
                       style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(),
-                        padding: EdgeInsets.all(12),
+                        shape: const CircleBorder(),
+                        padding: const EdgeInsets.all(12),
                         backgroundColor: isGuessed
                             ? (hangman.word.contains(letter)
                                   ? Colors.green
@@ -68,21 +70,22 @@ class HangmanScreen extends StatelessWidget {
                     );
                   }).toList(),
                 ),
+
                 // Game Over Message
                 if (hangman.isGameOver)
                   Column(
                     children: [
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Text(
                         hangman.isWinner
                             ? 'You Won! 🎉'
                             : 'Game Over! The word was: ${hangman.word}',
                         style: GoogleFonts.poppins(fontSize: 24),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       ElevatedButton(
                         onPressed: _controller.resetGame,
-                        child: Text('Play Again'),
+                        child: const Text('Play Again'),
                       ),
                     ],
                   ),
